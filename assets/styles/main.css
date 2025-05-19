@@ -25,3 +25,8 @@ footer {
   text-align: center;
 }
 
+footer a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+}
