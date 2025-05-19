@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
 }
+
 .subscribe-button {
   background-color: #007bff;
   color: white;
@@ -13,17 +14,8 @@ body {
 .subscribe-button:hover {
   background-color: #0056b3;
 }
+
 body.dark-mode {
   background-color: #121212;
   color: #f0f0f0;
- .subscribe-button {
-    background-color:#007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .subscribe-button:hover {
-    background-color: #0056b3;
 }
