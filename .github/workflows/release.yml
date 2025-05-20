@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'pyproject.toml'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install toml CLI
+        run: pip install toml-cli
+
+      - name: Get current version
+        id: get_version
+        run: |
+          VERSION=$(toml get pyproject.toml tool.poetry.version)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Release Tag
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.get_version.outputs.version }}
+          name: Release ${{ steps.get_version.outputs.version }}
+          generate_release_notes: true
