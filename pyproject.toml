@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "my-project"              # Replace with your project name
+version = "0.1.0"                # Starting version
+description = "A short description of your project"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"                  # Minimum python version
+# Add your project dependencies here, e.g.:
+# requests = "^2.28.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.3.5"                # For testing
+# Add other dev dependencies here if needed
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
